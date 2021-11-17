@@ -17,10 +17,13 @@ chatbot = ChatBot(
         }
     ],
     database_uri='sqlite:///database.sqlite3'
-) 
+)
+
+
 def res(text):
     return chatbot.get_response(text)
- # Training with Personal Ques & Ans 
+
+ # Training with Personal Ques & Ans
 conversation = [
     "Hello",
     "Hi there!",
@@ -29,13 +32,16 @@ conversation = [
     "That is good to hear",
     "Thank you.",
     "You're welcome."
+    "hello",
+
+
 ]
 
 trainer = ListTrainer(chatbot)
 trainer.train(conversation)
 
-# Training with English Corpus Data 
+# Training with English Corpus Data
 trainer_corpus = ChatterBotCorpusTrainer(chatbot)
 trainer_corpus.train(
     'chatterbot.corpus.english'
-) 
+)
